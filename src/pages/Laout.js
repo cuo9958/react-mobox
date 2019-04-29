@@ -41,7 +41,7 @@ class LayoutClass extends React.Component {
                     inlineCollapsed={this.props.initCollapsed}
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={[]}>
-                    <Menu.Item key="1">
+                    <Menu.Item key="/" onClick={this.nextPage}>
                         <Icon type="pie-chart" />
                         <span>首页</span>
                     </Menu.Item>
@@ -50,7 +50,7 @@ class LayoutClass extends React.Component {
                         <span>列表</span>
                     </Menu.Item>
                     <SubMenu key="sub1" title={<span><Icon type="setting" /><span>设置</span></span>}>
-                        <Menu.Item key="5">基础设置</Menu.Item>
+                        <Menu.Item key="/setting" onClick={this.nextPage}>基础设置</Menu.Item>
                     </SubMenu>
                 </Menu>
             </Sider>
@@ -83,7 +83,7 @@ class LayoutClass extends React.Component {
         this.props.trigger();
     }
     nextPage = ({ key }) => {
-        this.props.navigator.push("/list")
+        this.props.navigator.push(key)
     }
 }
 export default LayoutClass;

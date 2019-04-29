@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { DatePicker } from 'antd';
 import './test.less';
+import { observable, computed, action, trace } from 'mobx';
+import { Provider, inject } from 'mobx-react';
 
 function App() {
     return (
@@ -24,5 +26,23 @@ function App() {
         </div>
     );
 }
+
+class test {
+
+    @observable test = 1;
+
+    @computed
+    get test1() {
+        return 1 + this.test;
+    }
+
+    @action
+    test2() {
+        trace()
+        this.test = 2;
+    }
+}
+
+const tt = new test();
 
 export default App;

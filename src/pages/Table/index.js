@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject } from 'mobx-react';
-import { Table, Divider, Icon, Button } from 'antd';
+import { Table, Icon, Button } from 'antd';
 
 const { Column } = Table;
 

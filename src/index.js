@@ -13,10 +13,14 @@ class Main extends React.Component {
 
     render() {
         return <Provider {...models}>
-            <BrowserRouter>
+            <BrowserRouter ref="navigator">
                 {Routes()}
             </BrowserRouter>
         </Provider>
+    }
+
+    componentDidMount(){
+        console.log(this.refs.navigator)
     }
 }
 

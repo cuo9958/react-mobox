@@ -4,7 +4,7 @@
 import React from 'react';
 import { inject } from 'mobx-react';
 import { Layout, Menu, Icon, Avatar, Dropdown } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 
 const SubMenu = Menu.SubMenu;
 const { Sider, Header, Content } = Layout;
@@ -44,6 +44,10 @@ class LayoutClass extends React.Component {
                         <Icon type="pie-chart" />
                         <span>首页</span>
                     </Menu.Item>
+                    <Menu.Item key="/list" onClick={this.nextPage}>
+                        <Icon type="pie-chart" />
+                        <span>列表</span>
+                    </Menu.Item>
                     <SubMenu key="sub1" title={<span><Icon type="setting" /><span>设置</span></span>}>
                         <Menu.Item key="5">基础设置</Menu.Item>
                     </SubMenu>
@@ -77,6 +81,8 @@ class LayoutClass extends React.Component {
     toggle = () => {
         this.props.trigger();
     }
+    nextPage = ({ key }) => {
+        console.log(key, this.props, Router)
+    }
 }
-
 export default LayoutClass;

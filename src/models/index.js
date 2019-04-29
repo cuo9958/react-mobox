@@ -1,5 +1,7 @@
 import test from './test';
+import menu from './menu';
 
 export default {
-    test
+    test,
+    menu
 }

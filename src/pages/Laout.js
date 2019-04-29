@@ -39,24 +39,13 @@ class LayoutClass extends React.Component {
                     mode="inline"
                     inlineCollapsed={this.props.initCollapsed}
                     defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}>
+                    defaultOpenKeys={[]}>
                     <Menu.Item key="1">
                         <Icon type="pie-chart" />
-                        <span>Option 1</span>
+                        <span>首页</span>
                     </Menu.Item>
-                    <Menu.Item key="2">
-                        <Icon type="desktop" />
-                        <span>Option 2</span>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Icon type="inbox" />
-                        <span>Option 3</span>
-                    </Menu.Item>
-                    <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
-                        <Menu.Item key="7">Option 7</Menu.Item>
-                        <Menu.Item key="8">Option 8</Menu.Item>
+                    <SubMenu key="sub1" title={<span><Icon type="setting" /><span>设置</span></span>}>
+                        <Menu.Item key="5">基础设置</Menu.Item>
                     </SubMenu>
                 </Menu>
             </Sider>

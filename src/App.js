@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { DatePicker } from 'antd';
+import './test.less';
 
 function App() {
     return (
@@ -11,7 +12,6 @@ function App() {
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
         </p>
-                <DatePicker />
                 <a
                     className="App-link"
                     href="https://reactjs.org"

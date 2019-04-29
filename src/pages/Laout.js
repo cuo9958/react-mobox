@@ -12,7 +12,8 @@ const { Sider, Header, Content } = Layout;
 @inject(models => ({
     initCollapsed: models.menu.initCollapsed,
     collapsed: models.menu.collapsed,
-    trigger: models.menu.trigger
+    trigger: models.menu.trigger,
+    navigator: models.navigator.navigator
 }))
 class LayoutClass extends React.Component {
 
@@ -82,7 +83,7 @@ class LayoutClass extends React.Component {
         this.props.trigger();
     }
     nextPage = ({ key }) => {
-        console.log(key, this.props, Router)
+        this.props.navigator.push("/list")
     }
 }
 export default LayoutClass;

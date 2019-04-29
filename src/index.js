@@ -20,7 +20,8 @@ class Main extends React.Component {
     }
 
     componentDidMount(){
-        console.log(this.refs.navigator)
+        console.log(this.refs.navigator.history)
+        models.navigator.setNav(this.refs.navigator.history);
     }
 }
 

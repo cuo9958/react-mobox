@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { DatePicker } from 'antd';
-import './test.less';
 import { observable, computed, action, trace } from 'mobx';
 import { Provider, inject } from 'mobx-react';
 

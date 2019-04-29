@@ -4,7 +4,7 @@
 import React from 'react';
 import { inject } from 'mobx-react';
 import { Layout, Menu, Icon, Avatar, Dropdown } from 'antd';
-import { Link, Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SubMenu = Menu.SubMenu;
 const { Sider, Header, Content } = Layout;
@@ -48,6 +48,10 @@ class LayoutClass extends React.Component {
                     <Menu.Item key="/list" onClick={this.nextPage}>
                         <Icon type="pie-chart" />
                         <span>列表</span>
+                    </Menu.Item>
+                    <Menu.Item key="/table" onClick={this.nextPage}>
+                        <Icon type="pie-chart" />
+                        <span>表格</span>
                     </Menu.Item>
                     <SubMenu key="sub1" title={<span><Icon type="setting" /><span>设置</span></span>}>
                         <Menu.Item key="/setting" onClick={this.nextPage}>基础设置</Menu.Item>

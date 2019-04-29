@@ -1,23 +1,48 @@
 import React from 'react';
 import { inject } from 'mobx-react';
-import TextCom from '../../components/TestCom';
-import { Link } from 'react-router-dom';
+import { List } from 'antd';
 
 @inject(models => ({
     att1: models.test.att1
 }))
-class List extends React.Component {
+class BaseList extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            list: [{
+                id: 1,
+                title: "ceshi"
+            }, {
+                id: 1,
+                title: "ceshi"
+            }, {
+                id: 1,
+                title: "ceshi"
+            }]
+        }
+    }
     render() {
         return <div className="test1">
-            test:home{this.props.att1}
-            <div>
-                <TextCom />
-            </div>
-            <div>
-                <Link to="test">测试点击</Link>
-            </div>
+            <List
+                header={<div>Header</div>}
+                bordered
+                dataSource={this.state.list}
+                renderItem={this.renderItem}
+                pagination={{
+                    onChange: (page) => {
+                        console.log(page);
+                    },
+                    pageSize: 3,
+                }}
+            />
         </div>
     }
+
+    renderItem = (item, index) => {
+        return <List.Item>
+            {item.title}
+        </List.Item>
+    }
 }
-export default List;
+export default BaseList;
